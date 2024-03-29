@@ -39,7 +39,10 @@ public class UGStudent extends StudentFees{
         return hasScholarship;
     }
     
-    
+    @Override
+    public String toString(){
+        return "";
+    }
     
     
 }
