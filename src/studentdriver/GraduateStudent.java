@@ -54,8 +54,9 @@ public class GraduateStudent extends StudentFees {
         }
     }
 
+    @Override
     public String toString() {
-        return "";
+        return "Student name: " + this.getStudentName() + "\nStudent id:" + this.getStudentId() + "\nEnrolled: " + this.isIsEnrolled() + "\nGraduate Assistant: " + this.isIsGraduateStudent() + "\nGraduate Assistant Type: " + this.graduateAssistantType + "\nCourses Enrolled: " + this.coursesEnrolled + "\nPayable Amount: " + this.getPayableAmount();
     }
 
 }

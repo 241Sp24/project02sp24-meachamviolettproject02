@@ -41,11 +41,6 @@ public class UGStudent extends StudentFees {
     }
 
     @Override
-    public String toString() {
-        return "";
-    }
-
-    @Override
     public double getPayableAmount() {
         if (this.isHasScholarship() == true) {
             return (this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEE) - this.getScholarShipAmount();
@@ -53,6 +48,10 @@ public class UGStudent extends StudentFees {
             return this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEE;
         }
 
+    }
+    @Override
+    public String toString() {
+        return "Student name: " + this.getStudentName() + "\nStudent id:" + this.getStudentId() + "\nEnrolled: " + this.isIsEnrolled() + "\nScholarship: " + this.isHasScholarship() + "\nScholarship Amount: " + this.getScholarShipAmount() + "\nCourses Enrolled: " + this.coursesEnrolled + "\nPayable Amount: " + this.getPayableAmount();
     }
 
 }

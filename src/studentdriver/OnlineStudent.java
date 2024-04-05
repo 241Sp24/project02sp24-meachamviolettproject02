@@ -21,7 +21,8 @@ public class OnlineStudent extends StudentFees {
         return this.noOfMonths * this.MONTHLY_FEE;
     }
 
+    @Override
     public String toString() {
-        return "";
+        return "Student name: " + this.getStudentName() + "\nStudent id:" + this.getStudentId() + "\nEnrolled: " + this.isIsEnrolled() + "\nNo of Months: " + this.noOfMonths + "\nPayable Amount: " + this.getPayableAmount();
     }
 }
