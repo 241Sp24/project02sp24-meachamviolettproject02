@@ -44,6 +44,16 @@ public class GraduateStudent extends StudentFees {
         return graduateAssistantType;
     }
 
+    public double getPayableAmount() {
+        if (this.graduateAssistantType.equals("half")) {
+            return (this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEES) / 2;
+        } else if (this.graduateAssistantType.equals("full")) {
+            return 0;
+        } else {
+            return this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEES;
+        }
+    }
+
     public String toString() {
         return "";
     }

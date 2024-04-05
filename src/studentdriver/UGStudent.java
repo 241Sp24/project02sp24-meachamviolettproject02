@@ -8,7 +8,8 @@ package studentdriver;
  *
  * @author s560346
  */
-public class UGStudent extends StudentFees{
+public class UGStudent extends StudentFees {
+
     private double scholarShipAmount;
     private int coursesEnrolled;
     private boolean hasScholarship;
@@ -38,11 +39,20 @@ public class UGStudent extends StudentFees{
     public boolean isHasScholarship() {
         return hasScholarship;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return "";
     }
-    
-    
+
+    @Override
+    public double getPayableAmount() {
+        if (this.isHasScholarship() == true) {
+            return (this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEE) - this.getScholarShipAmount();
+        } else {
+            return this.coursesEnrolled * this.CREDITS_PER_COURSE * this.PER_CREDIT_FEE + this.ADDITIONAL_FEE;
+        }
+
+    }
+
 }

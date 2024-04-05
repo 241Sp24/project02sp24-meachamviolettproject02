@@ -5,6 +5,8 @@
  */
 package studentdriver;
 
+import java.io.*;
+
 /**
  *
  * @author dianar
@@ -13,8 +15,9 @@ public class StudentDriver {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         System.out.println("Project02");
     }
 
