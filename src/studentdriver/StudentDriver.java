@@ -18,7 +18,10 @@ public class StudentDriver {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println("Project02");
+        StudentFees[] students = new StudentFees[12];
+        for (StudentFees s : students) {
+
+        }
     }
 
 }
