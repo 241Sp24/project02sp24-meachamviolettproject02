@@ -17,6 +17,9 @@ public class GraduateStudent extends StudentFees {
 
     public GraduateStudent(String studentName, int studentId, boolean isEnrolled, boolean isGraduateAssistant, String graduateAssistantType, int coursesEnrolled) {
         super(studentName, studentId, isEnrolled);
+        this.isGraduateStudent = isGraduateStudent;
+        this.graduateAssistantType = graduateAssistantType;
+        this.coursesEnrolled = coursesEnrolled;
     }
 
     public GraduateStudent(String studentName, int studentId, boolean isEnrolled) {

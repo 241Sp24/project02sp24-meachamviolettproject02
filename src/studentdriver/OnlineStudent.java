@@ -15,6 +15,7 @@ public class OnlineStudent extends StudentFees {
 
     public OnlineStudent(String studentName, int studentId, boolean isEnrolled, int noOfMonths) {
         super(studentName, studentId, isEnrolled);
+        this.noOfMonths = noOfMonths;
     }
 
     public double getPayableAmount() {
