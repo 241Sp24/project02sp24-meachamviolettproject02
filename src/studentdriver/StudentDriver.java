@@ -22,8 +22,10 @@ public class StudentDriver {
 
         //get number of students from the user
         while (inputfile.hasNext()) {
+            int index = 0;
             if (inputfile.nextInt() > 100) {
-                students[index] = new UGStudent(studentID, studentName,);
+                students[index] = new UGStudent(String studentName, int studentID, boolean isEnrolled);
+                index ++;
 
             }
         }
