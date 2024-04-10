@@ -17,20 +17,15 @@ public class StudentDriver {
     public static void main(String[] args) throws FileNotFoundException {
         //create the array of students
         StudentFees[] students = new StudentFees[12];
-        
-        //create variables
-        int ugStudent = 0;
-        int gradStudent = 0;
-        int onlineStudent = 0;
-        
+
         //get number of students from the user
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the no of UG Students: ");
-        ugStudent = input.nextInt();
+         int ugStudent = input.nextInt();
         System.out.print("Enter the no of Graduate Students: ");
-        gradStudent = input.nextInt();
+        int gradStudent = input.nextInt();
         System.out.print("Enter the no of Online Students: ");
-        onlineStudent = input.nextInt();
+        int onlineStudent = input.nextInt();
         
         System.out.println("\n**********Undergraduate students list**********");
         for (StudentFees s : students) {
