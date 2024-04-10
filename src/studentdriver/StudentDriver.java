@@ -18,8 +18,15 @@ public class StudentDriver {
         //create the array of students
         StudentFees[] students = new StudentFees[12];
         File inputFile = new File("input.csv");
+        Scanner inputfile = new Scanner(inputFile);
 
         //get number of students from the user
+        while (inputfile.hasNext()) {
+            if (inputfile.nextInt() > 100) {
+                students[index] = new UGStudent(studentID, studentName,);
+
+            }
+        }
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the no of UG Students: ");
         int ugStudent = input.nextInt();
