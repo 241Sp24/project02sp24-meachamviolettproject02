@@ -23,41 +23,39 @@ public class StudentDriver {
         int gradStudent = input.nextInt();
         System.out.print("Enter the no of Online Students: ");
         int onlineStudent = input.nextInt();
-        
+
         //create the array of students
         StudentFees[] students = new StudentFees[ugStudent + gradStudent + onlineStudent];
         File inputFile = new File("input.csv");
         Scanner inputfile = new Scanner(inputFile);
-        
+
         //variable for index
         int num = 0;
 
         //get number of students from the user
         while (inputfile.hasNext()) {
-           String info = input.nextLine();
-           String[] infoArray = info.split(",");
-           int studID = Integer.parseInt(infoArray[0]);
-           String studName = infoArray[1];
-           boolean isEnrolled = Boolean.parseBoolean(infoArray[2]);
-           
-           if(studID >= 100 && studID < 199){
-               int coursesEnrolled = Integer.parseInt(infoArray[3]);
-               boolean hasScholarship = Boolean.parseBoolean(infoArray[4]);
-               double scholarshipAmount = Double.parseDouble(infoArray[5]);
-               students[num] = new UGStudent(studName, studID, isEnrolled, hasScholarship, scholarshipAmount, coursesEnrolled);
-           }
-           else if(studID >= 200 && studID < 299){
-               int coursesEnrolled = Integer.parseInt(infoArray[3]);
-               boolean isGradAssistant = Boolean.parseBoolean(infoArray[4]);
-               String gradAssistantType = (infoArray.length > 5) ? infoArray[5] : "";
-               students[num] = new GraduateStudent(studName, studID, isEnrolled, isGradAssistant, gradAssistantType, coursesEnrolled);
-           }
-           else if(studID >= 300 && studID < 399){
-               int creditsEnrolled = Integer.parseInt(infoArray[3]);
-               students[num] = new OnlineStudent(studName, studID, isEnrolled, creditsEnrolled);
-           }
-           num++;
-           
+            String info = inputfile.nextLine();
+            String[] infoArray = info.split(",");
+            int studID = Integer.parseInt(infoArray[0]);
+            String studName = infoArray[1];
+            boolean isEnrolled = Boolean.parseBoolean(infoArray[2]);
+
+            if (studID >= 100 && studID < 199) {
+                int coursesEnrolled = Integer.parseInt(infoArray[3]);
+                boolean hasScholarship = Boolean.parseBoolean(infoArray[4]);
+                double scholarshipAmount = Double.parseDouble(infoArray[5]);
+                students[num] = new UGStudent(studName, studID, isEnrolled, hasScholarship, scholarshipAmount, coursesEnrolled);
+            } else if (studID >= 200 && studID < 299) {
+                int coursesEnrolled = Integer.parseInt(infoArray[3]);
+                boolean isGradAssistant = Boolean.parseBoolean(infoArray[4]);
+                String gradAssistantType = (infoArray.length > 5) ? infoArray[5] : "";
+                students[num] = new GraduateStudent(studName, studID, isEnrolled, isGradAssistant, gradAssistantType, coursesEnrolled);
+            } else if (studID >= 300 && studID < 399) {
+                int creditsEnrolled = Integer.parseInt(infoArray[3]);
+                students[num] = new OnlineStudent(studName, studID, isEnrolled, creditsEnrolled);
+            }
+            num++;
+
         }
 
         System.out.println("\n**********Undergraduate students list**********");
