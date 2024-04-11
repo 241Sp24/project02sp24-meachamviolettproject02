@@ -44,12 +44,12 @@ public class StudentDriver {
                int coursesEnrolled = Integer.parseInt(infoArray[3]);
                boolean hasScholarship = Boolean.parseBoolean(infoArray[4]);
                double scholarshipAmount = Double.parseDouble(infoArray[5]);
-               students[num] = new OnlineStudent(studName, studID, isEnrolled, hasScholarship, scholarshipAmount, coursesEnrolled);
+               students[num] = new UGStudent(studName, studID, isEnrolled, hasScholarship, scholarshipAmount, coursesEnrolled);
            }
            else if(studID >= 200 && studID < 299){
                int coursesEnrolled = Integer.parseInt(infoArray[3]);
                boolean isGradAssistant = Boolean.parseBoolean(infoArray[4]);
-               String gradAssistantType = (infoArray.length > 5) ? "" : infoArray[5];
+               String gradAssistantType = (infoArray.length > 5) ? infoArray[5] : "";
                students[num] = new GraduateStudent(studName, studID, isEnrolled, isGradAssistant, gradAssistantType, coursesEnrolled);
            }
            else if(studID >= 300 && studID < 399){
